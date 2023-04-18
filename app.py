@@ -2,10 +2,6 @@ import streamlit as st
 import pandas as pd
 from io import StringIO
 
-#st.write("My First Streamlit Web App")
-#df = pd.DataFrame({"one": [1, 2, 3], "two": [4, 5, 6], "three": [7, 8, 9]})
-#st.write(df)
-
 def main():
     st.title("Receive file")
     menu=["Home","Login","Signup"]
@@ -16,7 +12,9 @@ def main():
         st.subheader("Login Section")
         username=st.sidebar.text_input("Username")
         password=st.sidebar.text_input("Password",type='password')
-        if st.sidebar.checkbox("Login"):
+        loginBox=st.sidebar.checkbox("Login")
+        if loginBox:
+            loginBox.hide()
             if password == '12345' and username=='admin':
                 st.success("Logged in as {}".format(username))
                 task = st.selectbox("Task",["Upload File","Another Task"])
