@@ -14,19 +14,20 @@ def main():
         password=st.sidebar.text_input("Password",type='password')
         loginBox=st.sidebar.checkbox("Login")
         if loginBox:
-            loginBox.hide()
             if password == '12345' and username=='admin':
+                if st.sidebar.button("Logout!"):
+                    username = ""
                 st.success("Logged in as {}".format(username))
-                task = st.selectbox("Task",["Upload File","Another Task"])
-                if task=="Upload File":
+                task = st.selectbox("Task",["Another Task","Upload File"])
+                if task=="Another Task":
+                    st.subheader("Another Task")
+                elif task=="Upload File":
                     st.subheader("Upload your file")
                     uploaded_file = st.file_uploader("Choose a file")
                     if uploaded_file is not None:
                         # To read file as bytes:
                         bytes_data = uploaded_file.getvalue()
                         st.write("Success")
-                elif task=="Another Task":
-                    st.subheader("Another Task")
             else:
                 st.warning("Incorrect login data")
 
