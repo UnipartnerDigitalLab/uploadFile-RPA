@@ -18,7 +18,7 @@ def main():
                 if st.sidebar.button("Logout!"):
                     username = ""
                 st.success("Logged in as {}".format(username))
-                task = st.selectbox("Task",["Another Task","Upload File"])
+                task = st.selectbox("Task",["Upload File","Another Task"])
                 if task=="Another Task":
                     st.subheader("Another Task")
                 elif task=="Upload File":
