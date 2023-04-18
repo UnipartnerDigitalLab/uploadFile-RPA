@@ -8,7 +8,7 @@ Simple app that simulates a login and file upload
 
 ## Section Heading
 
-the app url is: https://nunomotaricardo-pt-static-streamlit-app-app-y2jrrk.streamlit.app/
+the app url is: https://unipartnerdigitallab-uploadfile.streamlit.app//
 
 ## Further Reading
 
